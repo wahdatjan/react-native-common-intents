@@ -11,7 +11,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-public class CustomModulePackage implements ReactPackage {
+public class IntentModulePackage implements ReactPackage {
     @Nonnull
     @Override
     public List<NativeModule> createNativeModules(@Nonnull ReactApplicationContext reactContext) {

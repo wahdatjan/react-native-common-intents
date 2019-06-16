@@ -16,7 +16,7 @@ import com.facebook.react.bridge.ReadableMap;
 
 import javax.annotation.Nonnull;
 
-public class BasicModule extends ReactContextBaseJavaModule implements ActivityEventListener {
+public class IntentModule extends ReactContextBaseJavaModule implements ActivityEventListener {
 
     private static final int PICK_IMAGE = 1;
     private static final int GALERY_INTENT = 2;
@@ -27,7 +27,7 @@ public class BasicModule extends ReactContextBaseJavaModule implements ActivityE
 
     ReactApplicationContext context = getReactApplicationContext();
 
-    public BasicModule(@Nonnull ReactApplicationContext reactContext) {
+    public IntentModule(@Nonnull ReactApplicationContext reactContext) {
         super(reactContext);
     }
 
