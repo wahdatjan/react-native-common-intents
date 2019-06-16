@@ -1,6 +1,8 @@
 package com.wahdatjan.intents;
 
 import android.app.Activity;
+
+import android.app.SearchManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -29,6 +31,7 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
 
     public IntentModule(@Nonnull ReactApplicationContext reactContext) {
         super(reactContext);
+        context.addActivityEventListener(this);
     }
 
     @Nonnull
@@ -121,6 +124,7 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
         Uri webPage = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
     }
@@ -129,6 +133,7 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
     public void openDateSettings(){
         Intent intent = new Intent(Settings.ACTION_DATE_SETTINGS);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
     }
@@ -137,6 +142,7 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
     public void openWifiSettings(){
         Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
     }
@@ -145,6 +151,7 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
     public void openBluetoothSettings(){
         Intent intent = new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
     }
@@ -153,6 +160,7 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
     public void openAirplaneModeSettings(){
         Intent intent = new Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
     }
@@ -160,7 +168,10 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
     @ReactMethod
     public void performWebSearch(String query){
         Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+
         if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra(SearchManager.QUERY, query);
             context.startActivity(intent);
         }
     }

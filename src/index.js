@@ -1,6 +1,6 @@
 import {NativeModules, Platform} from 'react-native';
 
-const CommonIntents  = NativeModules.RNintents;
+const CommonIntents  = NativeModules.RNIntents;
 
 
 const noIOS = () => console.warn('Native Common intents cannot be used for iOS.');
