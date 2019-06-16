@@ -1,0 +1,33 @@
+{
+  "name": "react-native-common-intents",
+  "version": "0.0.1",
+  "description": "A react-native module in which you will use most of the common intents for only android platform",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "intents",
+    "common intents",
+    "image",
+    "image picker",
+    "android",
+    "open web page",
+    "wifi settings",
+    "bluetooth settings",
+    "native"
+  ],
+  "author": "wahdatjan <wahadatkashmiri@gmail.com",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": ">=0.40.0",
+    "react": ">=15.4.0"
+  },
+  "nativePackage": true
+}
