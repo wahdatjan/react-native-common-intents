@@ -23,7 +23,9 @@ lets say you want to pick image from gallery and want to upload it, you want use
      - dependencies {  
            implementation "com.facebook.react:react-native:+"  // From node_modules  
            + implementation project(':react-native-common-intents')  
-       }
+       }   
+       ```
+
        
     
      
