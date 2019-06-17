@@ -24,8 +24,15 @@ lets say you want to pick image from gallery and want to upload it, you want use
            implementation "com.facebook.react:react-native:+"  // From node_modules  
            + implementation project(':react-native-common-intents')  
        } 
-       ```
+       
        
        
  - in  `android/settings.gradle`  
+  ```
+  
+  include ':app'
+  include ':react-native-common-intents'
+project(':react-native-common-intents').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common-intents/android')
+
+
 
