@@ -65,6 +65,8 @@ Manual link:
  
  ## Example/ Image Picker
  
+ RNIntents.ImagePicker Module has two arguments first one will give you the **url** of the  
+ image that you will choose from gallery and 2nd argument will give you the **error** which may occur  
  ```
  RNIntents.ImagePicker(url => {
   console.log("image uri",url);
