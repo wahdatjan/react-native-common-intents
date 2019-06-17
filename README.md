@@ -27,4 +27,4 @@ lets say you want to pick image from gallery and want to upload it, you want use
        ```
        
        
-     - in  `android/settings.gradle`
+- in  `android/settings.gradle`
