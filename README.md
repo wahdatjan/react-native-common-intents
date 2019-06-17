@@ -48,5 +48,8 @@ Manual link:
         +    new IntentModulePackage() // <------ add this line to your MainApplication class
       );
     }
+ ```
+ ###Permissions
+ 
  
  
