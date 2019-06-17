@@ -50,6 +50,12 @@ Manual link:
     }
  ```
  ## Permissions
- 
- 
+ ###### Add this to your `AndroidManifest.xml`  
+ ```
+ ...
+ <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+  ...
+  ```
  
