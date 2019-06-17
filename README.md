@@ -6,3 +6,6 @@ React Native Android Module to use to use Android's Common intents actions like 
 lets say you want to pick image from gallery and want to upload it, you want user to open wifi settings , date settings etc directly from your app , you want to load a web url in browser or you want to make some web search all these things can be achieved with this library.
 
 # Installation
+ `npm install react-native-common-intents --save`  
+       or  
+  `yarn add react-native-common-intents`
