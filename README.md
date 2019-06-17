@@ -23,7 +23,8 @@ Manual link:
      ```
      - dependencies {  
            implementation "com.facebook.react:react-native:+"  // From node_modules  
-           + implementation project(':react-native-common-intents')  
+         
+           + implementation project(':react-native-common-intents')  // <------ add this line to your build.gradle file
        } 
        
        
@@ -32,8 +33,9 @@ Manual link:
   ```
   
   include ':app'
- + include ':react-native-common-intents'
- + project(':react-native-common-intents').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common-intents/android')
+  // <------ add below two lines to your settings.gradle------>
+ + include ':react-native-common-intents' // 
+ + project(':react-native-common-intents').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common-intents/android')// 
 
 ```
  - in `MainApplication.java`
@@ -43,7 +45,7 @@ Manual link:
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-        +    new IntentModulePackage()
+        +    new IntentModulePackage() // <------ add this line to your MainApplication class
       );
     }
  
