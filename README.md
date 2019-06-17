@@ -141,7 +141,7 @@ export default class App extends Component {
 RNIntents.ImagePicker(url => {
   console.log("image uri",url);
 },(err) => {
-  console.log("eeeoe",err);
+  console.log("error",err);
 });
 
   }  
