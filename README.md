@@ -59,3 +59,18 @@ Manual link:
   ...
   ```
  
+ ## Import Library
+ `import RNIntents from 'react-native-common-intents';`
+
+ 
+ ## Example/ Image Picker
+ 
+ ```
+ RNIntents.ImagePicker(url => {
+  console.log("image uri",url);
+},(err) => {
+  console.log("eeeoe",err);
+});
+
+
+```
