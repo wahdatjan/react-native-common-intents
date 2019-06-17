@@ -19,6 +19,7 @@ Automatic link:
 Manual link:
 
  - in `android/app/build.gradle` 
+ 
      ```
      - dependencies {  
            implementation "com.facebook.react:react-native:+"  // From node_modules  
@@ -34,5 +35,16 @@ Manual link:
  + include ':react-native-common-intents'
  + project(':react-native-common-intents').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common-intents/android')
 
+```
+ - in `MainApplication.java`
  
-
+ ```
+     @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+        +    new IntentModulePackage()
+      );
+    }
+ 
+ 
