@@ -32,7 +32,7 @@ Manual link:
   ```
   
   include ':app'
- + include ':react-native-common-intents'
+ '+ include ':react-native-common-intents''
  + project(':react-native-common-intents').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common-intents/android')
 
 ```
