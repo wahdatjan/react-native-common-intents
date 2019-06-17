@@ -76,3 +76,39 @@ Manual link:
 
 
 ```
+
+## Example/ open Web Page
+
+```
+RNIntents.openWeb("https://google.com");
+```
+
+## Example/ Perform Web Search
+
+```
+RNIntents.performWebSearch("Winter is coming");
+```
+
+## Example/ Open DateSettings
+
+```
+RNIntents.openDateSettings();
+```
+
+## Example/ Open WifiSettings
+
+```
+RNIntents.openWifiSettings();
+```
+## Example/ open AirplaneModeSettings
+
+```
+RNIntents.openAirplaneModeSettings();
+```
+
+## Example/ open BluetoothSettings
+
+```
+RNIntents.openBluetoothSettings();
+```
+
