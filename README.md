@@ -112,3 +112,88 @@ RNIntents.openAirplaneModeSettings();
 RNIntents.openBluetoothSettings();
 ```
 
+## Example
+
+
+```
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import RNIntents from 'react-native-common-intents';
+
+
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>React-native-common-intents</Text>
+        <Button  title =" pick image from gallery" onPress = {() => {
+
+
+RNIntents.ImagePicker(url => {
+  console.log("image uri",url);
+},(err) => {
+  console.log("eeeoe",err);
+});
+
+  }  
+
+
+}  />
+<Button title ="open Date settings" onPress = { () => {
+  RNIntents.openDateSettings();
+}}/>
+
+<Button title ="open Wifi settings" onPress = { () => {
+  RNIntents.openWifiSettings();
+}}/>
+
+<Button title ="open Airplanemode Settings " onPress = { () => {
+  RNIntents.openAirplaneModeSettings();
+  console.log("hehehehe")
+}}/>
+
+<Button title ="open Bluetooth Settings " onPress = { () => {
+  RNIntents.openBluetoothSettings();
+}}/>
+<Button title ="open browser" onPress = { () => {
+  RNIntents.openWeb("http://zigtor.com");
+}}/>
+
+<Button title ="Perform web search " onPress = { () => {
+  RNIntents.performWebSearch("Winter is coming");
+}}/>
+
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+```
