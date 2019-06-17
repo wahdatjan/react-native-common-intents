@@ -18,7 +18,7 @@ lets say you want to pick image from gallery and want to upload it, you want use
    
 - Manual link:
 
-     - in `android/app/build.gradle` 
+ - in `android/app/build.gradle` 
      ```
      - dependencies {  
            implementation "com.facebook.react:react-native:+"  // From node_modules  
@@ -27,4 +27,5 @@ lets say you want to pick image from gallery and want to upload it, you want use
        ```
        
        
-- in  `android/settings.gradle`
+ - in  `android/settings.gradle`  
+
