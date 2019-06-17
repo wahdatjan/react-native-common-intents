@@ -12,11 +12,11 @@ lets say you want to pick image from gallery and want to upload it, you want use
     
 #### Add it to your android project
 
-- Automatic link:  
+Automatic link:  
 
     `react-native link react-native-common-intents`  
    
-- Manual link:
+Manual link:
 
  - in `android/app/build.gradle` 
      ```
@@ -31,8 +31,8 @@ lets say you want to pick image from gallery and want to upload it, you want use
   ```
   
   include ':app'
-  include ':react-native-common-intents'
-project(':react-native-common-intents').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common-intents/android')
+ + include ':react-native-common-intents'
+ + project(':react-native-common-intents').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common-intents/android')
 
-
+ 
 
