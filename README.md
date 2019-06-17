@@ -9,6 +9,14 @@ lets say you want to pick image from gallery and want to upload it, you want use
  `npm install react-native-common-intents --save`  
        or  
   `yarn add react-native-common-intents`
+    
 #### Add it to your android project
-- Automatically with:
-`react-native link react-native-common-intents`
+
+- Automatic link:  
+
+ `react-native link react-native-common-intents`  
+   
+- Manual link:
+     - in `android/app/build.gradle`  
+     
+ 
