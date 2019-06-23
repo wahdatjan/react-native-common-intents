@@ -1,7 +1,7 @@
 package com.wahdatjan.intents;
 
 import android.app.Activity;
-
+import android.provider.AlarmClock;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.net.Uri;
@@ -186,4 +186,29 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
         }
     }
    
+   @ReactMethod
+    public void startTimer(String message, int seconds,boolean value) {
+        Intent intent = new Intent(AlarmClock.ACTION_SET_TIMER)
+                .putExtra(AlarmClock.EXTRA_MESSAGE, message)
+                .putExtra(AlarmClock.EXTRA_LENGTH, seconds)
+                .putExtra(AlarmClock.EXTRA_SKIP_UI, value);
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
+
+        
+    }
+
+    @ReactMethod
+    public void createAlarm(String message, int hour, int minutes) {
+        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
+                .putExtra(AlarmClock.EXTRA_MESSAGE, message)
+                .putExtra(AlarmClock.EXTRA_HOUR, hour)
+                .putExtra(AlarmClock.EXTRA_MINUTES, minutes);
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
+    }
 }

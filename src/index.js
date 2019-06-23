@@ -13,7 +13,8 @@ const iosOS = {
     openBluetoothSettings: noIOS,
     openAirplaneModeSettings: noIOS,
     performWebSearch: noIOS,
-    dialNumber : noIOS
+    dialNumber : noIOS,
+    startTimer : noIOS
 };
 
 const Intents = Platform.OS === 'ios' ? iosOS : {
@@ -29,7 +30,20 @@ const Intents = Platform.OS === 'ios' ? iosOS : {
     openWifiSettings : CommonIntents.openWifiSettings,
     openBluetoothSettings : CommonIntents.openBluetoothSettings,
     openAirplaneModeSettings : CommonIntents.openAirplaneModeSettings,
-    dialNumber : CommonIntents.dialNumber,
+    dialNumber : phoneno => {
+        if(phoneno=="" || phoneno==null){
+            throw new Error("Please enter phone number");
+        }
+        CommonIntents.dialNumber(phoneno);
+    },
+    
+    startTimer : CommonIntents.startTimer,
+    createAlarm : (message,hour,minutes) => {
+        if(message==""){
+            throw new Error("Message cannot be put as an empty");
+        }
+        CommonIntents.createAlarm(message,hour,minutes);
+    },
     performWebSearch : query => {
         if(query== ""){
             throw new Error("Please Enter Text to search");
