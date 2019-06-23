@@ -1,5 +1,5 @@
 # react-native-common-intents
-React Native Android Module to use to use Android's Common intents actions like for Image picker from Gallery, open date settings,open wifi settings , open Bluetooth settings, open airplanemode settings, open browser with input url or to make web search by entering text.
+React Native Android Module's Android Common intents actions like for Image picker from Gallery, open date settings,open wifi settings , open Bluetooth settings, open airplanemode settings, open browser with input url or to make web search by entering text.
 
 
 ## How this Module is useful ?
@@ -16,7 +16,7 @@ lets say you want to pick image from gallery and want to upload it, you want use
 
 Automatic link:  
 
-    `react-native link react-native-common-intents`  
+    react-native link react-native-common-intents  
    
 Manual link:
 
@@ -39,7 +39,7 @@ Manual link:
  + include ':react-native-common-intents' // 
  + project(':react-native-common-intents').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common-intents/android')// 
 
-```
+ ```
  - in `MainApplication.java`
  
  ```
@@ -47,21 +47,26 @@ Manual link:
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-        +    new IntentModulePackage() // <------ add this line to your MainApplication class
+            new IntentModulePackage() // <------ add this line to your MainApplication class
       );
     }
  ```
- ## Permissions
+
+
+  ## Permissions
+
  ###### Add this to your `AndroidManifest.xml`  
  ```
  ...
  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
   ...
   ```
  
- ## Import Library
+ ##  Import Library
+
  `import RNIntents from 'react-native-common-intents';`
 
  
@@ -112,6 +117,34 @@ RNIntents.openAirplaneModeSettings();
 
 ```
 RNIntents.openBluetoothSettings();
+```
+
+## Example/ Dial Phone Number
+
+```
+RNIntents.dialNumber("9086090860");
+```
+
+
+## Example/ Start Timer
+###### you can start a timer in background without opening app or with opening app based
+on the boolean value passed as true or false
+
+ It takes 3 parameters
+ Message as string , seconds as int , boolean value
+
+```
+RNIntents.startTimer(String message, int seconds,boolean value) 
+```
+
+
+## Example/ Create alarm
+
+
+### It takes 3 parameters
+#### Message as string , hours as int , minutes as int
+```
+RNIntents.createAlarm(String message, int hour, int minutes);
 ```
 
 ## Example

@@ -1,6 +1,6 @@
 {
   "name": "react-native-common-intents",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "A react-native module in which you will use find all of the common intents for only android platform",
   "main": "src/index.js",
   "scripts": {
