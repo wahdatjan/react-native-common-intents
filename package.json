@@ -1,6 +1,6 @@
 {
   "name": "react-native-common-intents",
-  "version": "0.5.1",
+  "version": "0.1.0",
   "description": "A react-native module in which you will use find all of the common intents for only android platform",
   "main": "src/index.js",
   "scripts": {
@@ -21,7 +21,11 @@
     "open web page",
     "wifi settings",
     "bluetooth settings",
-    "native"
+    "native",
+    "dial phone number",
+    "dial phone intent",
+    "alarm intent",
+    "timer intent"
   ],
   "author": "wahdatjan <wahadatkashmiri@gmail.com",
   "license": "MIT",
