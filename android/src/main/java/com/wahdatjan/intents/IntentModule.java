@@ -176,7 +176,14 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
         }
     }
 
+    @ReactMethod
+    public void dialNumber(String number){
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" +number));
+        if (intent.resolveActivity(context.getPackageManager()) !=null){
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getReactApplicationContext().startActivity(intent);
+        }
+    }
    
-
-
 }
