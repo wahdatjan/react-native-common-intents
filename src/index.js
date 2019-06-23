@@ -12,7 +12,8 @@ const iosOS = {
     openWifiSettings: noIOS,
     openBluetoothSettings: noIOS,
     openAirplaneModeSettings: noIOS,
-    performWebSearch: noIOS
+    performWebSearch: noIOS,
+    dialNumber : noIOS
 };
 
 const Intents = Platform.OS === 'ios' ? iosOS : {
@@ -28,6 +29,7 @@ const Intents = Platform.OS === 'ios' ? iosOS : {
     openWifiSettings : CommonIntents.openWifiSettings,
     openBluetoothSettings : CommonIntents.openBluetoothSettings,
     openAirplaneModeSettings : CommonIntents.openAirplaneModeSettings,
+    dialNumber : CommonIntents.dialNumber,
     performWebSearch : query => {
         if(query== ""){
             throw new Error("Please Enter Text to search");
