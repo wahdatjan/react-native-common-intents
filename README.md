@@ -1,5 +1,15 @@
 # react-native-common-intents
-React Native Android Module's Android Common intents actions like for Image picker from Gallery, open date settings,open wifi settings , open Bluetooth settings, open airplanemode settings, open browser with input url or to make web search by entering text.
+React Native Android Module's Android Common intents actions like for   
+Image picker from Gallery  
+Open date settings  
+Open wifi settings   
+Open Bluetooth settings 
+Open airplanemode settings  
+Open browser with input url   
+Make web search by entering text  
+Create alarm  
+Create timer
+dial phone number    
 
 
 ## How this Module is useful ?
