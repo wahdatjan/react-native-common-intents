@@ -1,5 +1,5 @@
 # react-native-common-intents
-[![npm](https://img.shields.io/npm/dt/react-native-common-intents.svg)]  
+![npm](https://img.shields.io/npm/dt/react-native-common-intents.svg)  
 
 
 React Native Android Module's Android Common intents actions like for   
