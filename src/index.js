@@ -8,6 +8,7 @@ const noIOS = () => console.warn('Native Common intents cannot be used for iOS.'
 const iosOS = {
     ImagePicker: noIOS,
     openWebPage: noIOS,
+    openSettings:noIOS,
     openDateSettings: noIOS,
     openWifiSettings: noIOS,
     openBluetoothSettings: noIOS,
@@ -26,6 +27,7 @@ const Intents = Platform.OS === 'ios' ? iosOS : {
         }
         CommonIntents.openWebPage(url);
     },
+    openSettings: CommonIntents.openSettings,
     openDateSettings : CommonIntents.openDateSettings,
     openWifiSettings : CommonIntents.openWifiSettings,
     openBluetoothSettings : CommonIntents.openBluetoothSettings,

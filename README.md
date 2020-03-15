@@ -109,6 +109,11 @@ RNIntents.openWeb("https://google.com");
 RNIntents.performWebSearch("Winter is coming");
 ```
 
+## Example/ Open Settings Page
+
+```
+RNIntents.openSettings();
+```
 ## Example/ Open DateSettings
 
 ```

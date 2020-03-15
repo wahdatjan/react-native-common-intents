@@ -129,6 +129,14 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
         }
     }
 
+@ReactMethod
+    public void openSettings(){
+        Intent intent = new Intent(Settings.ACTION_SETTINGS);
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
+    }
     @ReactMethod
     public void openDateSettings(){
         Intent intent = new Intent(Settings.ACTION_DATE_SETTINGS);
