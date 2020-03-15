@@ -1,0 +1,112 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'publish' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/wahdat/Documents/react-native-common-intents',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/wahdat/.npm/react-native-common-intents/0.1.0/package.tgz not in flight; packing
+9 info lifecycle react-native-common-intents@0.1.0~prepublish: react-native-common-intents@0.1.0
+10 silly lifecycle react-native-common-intents@0.1.0~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/home/wahdat/.npm/react-native-common-intents/0.1.0/package.tgz',
+11 verbose tar pack   '/home/wahdat/Documents/react-native-common-intents' ]
+12 verbose tarball /home/wahdat/.npm/react-native-common-intents/0.1.0/package.tgz
+13 verbose folder /home/wahdat/Documents/react-native-common-intents
+14 verbose addLocalTarball adding from inside cache /home/wahdat/.npm/react-native-common-intents/0.1.0/package.tgz
+15 silly cache afterAdd react-native-common-intents@0.1.0
+16 verbose afterAdd /home/wahdat/.npm/react-native-common-intents/0.1.0/package/package.json not in flight; writing
+17 verbose afterAdd /home/wahdat/.npm/react-native-common-intents/0.1.0/package/package.json written
+18 silly publish { name: 'react-native-common-intents',
+18 silly publish   version: '0.1.0',
+18 silly publish   description: 'A react-native module in which you will use find all of the common intents for only android platform',
+18 silly publish   main: 'src/index.js',
+18 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/wahdatjan/react-native-common-intents.git' },
+18 silly publish   keywords:
+18 silly publish    [ 'react',
+18 silly publish      'react-native',
+18 silly publish      'intents',
+18 silly publish      'common intents',
+18 silly publish      'image',
+18 silly publish      'image picker',
+18 silly publish      'android',
+18 silly publish      'open web page',
+18 silly publish      'wifi settings',
+18 silly publish      'bluetooth settings',
+18 silly publish      'native',
+18 silly publish      'dial phone number',
+18 silly publish      'dial phone intent',
+18 silly publish      'alarm intent',
+18 silly publish      'timer intent' ],
+18 silly publish   author: { name: 'wahdatjan' },
+18 silly publish   license: 'MIT',
+18 silly publish   peerDependencies: { 'react-native': '>=0.40.0', react: '>=15.4.0' },
+18 silly publish   nativePackage: true,
+18 silly publish   readme: '# react-native-common-intents\n![npm](https://img.shields.io/npm/dt/react-native-common-intents.svg)  \n\n\nReact Native Android Module\'s Android Common intents actions like for   \n##### Image picker from Gallery  \n##### Open date settings  \n##### Open settings page\n##### Open wifi settings    \n##### Open Bluetooth settings  \n##### Open airplanemode settings  \n##### Open browser with input url   \n##### Make web search by entering text  \n##### Create alarm  \n##### Create timer\n##### dial phone number    \n\n\n## How this Module is useful ?\nlets say you want to pick image from gallery and want to upload it, you want user to open wifi settings , date settings etc directly from your app , you want to load a web url in browser or you want to make some web search all these things can be achieved with this library as shown below.\n\n\n\n# Installation\n `npm install react-native-common-intents --save`  \n       or  \n  `yarn add react-native-common-intents`\n    \n#### Add it to your android project\n\nAutomatic link:  \n\n    react-native link react-native-common-intents  \n   \nManual link:\n\n - in `android/app/build.gradle` \n \n     ```\n     - dependencies {  \n           implementation "com.facebook.react:react-native:+"  // From node_modules  \n         \n           + implementation project(\':react-native-common-intents\')  // <------ add this line to your build.gradle file\n       } \n       \n       \n       \n - in  `android/settings.gradle`  \n  ```\n  \n  include \':app\'\n  // <------ add below two lines to your settings.gradle------>\n + include \':react-native-common-intents\' // \n + project(\':react-native-common-intents\').projectDir = new File(rootProject.projectDir, \'../node_modules/react-native-common-intents/android\')// \n\n ```\n - in `MainApplication.java`\n \n ```\n     @Override\n    protected List<ReactPackage> getPackages() {\n      return Arrays.<ReactPackage>asList(\n          new MainReactPackage(),\n            new IntentModulePackage() // <------ add this line to your MainApplication class\n      );\n    }\n ```\n\n\n  ## Permissions\n\n ###### Add this to your `AndroidManifest.xml`  \n ```\n ...\n <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />\n    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />\n    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />\n    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />\n  ...\n  ```\n \n ##  Import Library\n\n `import RNIntents from \'react-native-common-intents\';`\n\n \n ## Example/ Image Picker\n \n RNIntents.ImagePicker Module has two arguments first one will give you the **url** of the  \n image that you will choose from gallery and 2nd argument will give you the **error** which may occur  \n ```\n RNIntents.ImagePicker(url => {\n  console.log("image uri",url);\n},(err) => {\n  console.log("eeeoe",err);\n});\n\n\n```\n\n## Example/ open Web Page\n\n```\nRNIntents.openWeb("https://google.com");\n```\n\n## Example/ Perform Web Search\n\n```\nRNIntents.performWebSearch("Winter is coming");\n```\n\n## Example/ Open Settings Page\n\n```\nRNIntents.openSettings();\n```\n## Example/ Open DateSettings\n\n```\nRNIntents.openDateSettings();\n```\n\n## Example/ Open WifiSettings\n\n```\nRNIntents.openWifiSettings();\n```\n## Example/ open AirplaneModeSettings\n\n```\nRNIntents.openAirplaneModeSettings();\n```\n\n## Example/ open BluetoothSettings\n\n```\nRNIntents.openBluetoothSettings();\n```\n\n## Example/ Dial Phone Number\n\n```\nRNIntents.dialNumber("9086090860");\n```\n\n\n## Example/ Start Timer\n###### you can start a timer in background without opening app or with opening app based\non the boolean value passed as true or false\n\n It takes 3 parameters\n Message as string , seconds as int , boolean value\n\n```\nRNIntents.startTimer(String message, int seconds,boolean value) \n```\n\n\n## Example/ Create alarm\n\n\n### It takes 3 parameters\n#### Message as string , hours as int , minutes as int\n```\nRNIntents.createAlarm(String message, int hour, int minutes);\n```\n\n## Example\n\n\n```diff\n\nimport React, {Component} from \'react\';\nimport {Platform, StyleSheet, Text, View, Button} from \'react-native\';\nimport RNIntents from \'react-native-common-intents\';\n\n\n\nexport default class App extends Component {\n  render() {\n    return (\n      <View style={styles.container}>\n        <Text style={styles.welcome}>React-native-common-intents</Text>\n        <Button  title =" pick image from gallery" onPress = {() => {\n\n\nRNIntents.ImagePicker(url => {\n  console.log("image uri",url);\n},(err) => {\n  console.log("error",err);\n});\n\n  }  \n\n\n}  />\n<Button title ="open Date settings" onPress = { () => {\n  RNIntents.openDateSettings();\n}}/>\n\n<Button title ="open Wifi settings" onPress = { () => {\n  RNIntents.openWifiSettings();\n}}/>\n\n<Button title ="open Airplanemode Settings " onPress = { () => {\n  RNIntents.openAirplaneModeSettings();\n  console.log("hehehehe")\n}}/>\n\n<Button title ="open Bluetooth Settings " onPress = { () => {\n  RNIntents.openBluetoothSettings();\n}}/>\n<Button title ="open browser" onPress = { () => {\n  RNIntents.openWeb("http://zigtor.com");\n}}/>\n\n<Button title ="Perform web search " onPress = { () => {\n  RNIntents.performWebSearch("Winter is coming");\n}}/>\n\n      </View>\n    );\n  }\n}\n\nconst styles = StyleSheet.create({\n  container: {\n    flex: 1,\n    justifyContent: \'center\',\n    alignItems: \'center\',\n    backgroundColor: \'#F5FCFF\',\n  },\n  welcome: {\n    fontSize: 20,\n    textAlign: \'center\',\n    margin: 10,\n  },\n  instructions: {\n    textAlign: \'center\',\n    color: \'#333333\',\n    marginBottom: 5,\n  },\n});\n\n```\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '3051402c842b378e560ad545350b6f099521974d',
+18 silly publish   bugs:
+18 silly publish    { url: 'https://github.com/wahdatjan/react-native-common-intents/issues' },
+18 silly publish   homepage: 'https://github.com/wahdatjan/react-native-common-intents#readme',
+18 silly publish   _id: 'react-native-common-intents@0.1.0',
+18 silly publish   _shasum: 'bd3f1518064c74046028b561a544800d153b8cc5',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name react-native-common-intents
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/react-native-common-intents
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /home/wahdat/.npm/react-native-common-intents/0.1.0/package.tgz
+26 verbose request uri https://registry.npmjs.org/react-native-common-intents
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 19:08:28
+29 verbose request using bearer token for auth
+30 verbose request id 74c4185bc807b57e
+31 http request PUT https://registry.npmjs.org/react-native-common-intents
+32 http 403 https://registry.npmjs.org/react-native-common-intents
+33 verbose headers { date: 'Sun, 15 Mar 2020 13:38:30 GMT',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'transfer-encoding': 'chunked',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'set-cookie':
+33 verbose headers    [ '__cfduid=dfc70a3fa1cec53b31e2028626ae55b891584279509; expires=Tue, 14-Apr-20 13:38:29 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+33 verbose headers   'cf-ray': '5746a293ca1ee2b5-NAG',
+33 verbose headers   'cf-cache-status': 'DYNAMIC',
+33 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+33 verbose headers   vary: 'Accept-Encoding',
+33 verbose headers   server: 'cloudflare',
+33 verbose headers   'content-encoding': 'gzip' }
+34 verbose request invalidating /home/wahdat/.npm/registry.npmjs.org/react-native-common-intents on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: You cannot publish over the previously published versions: 0.1.0. : react-native-common-intents
+36 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at /usr/share/npm/node_modules/npm-registry-client/lib/request.js:178:7
+36 verbose stack     at Gunzip.onEnd (zlib.js:131:5)
+36 verbose stack     at emitNone (events.js:111:20)
+36 verbose stack     at Gunzip.emit (events.js:208:7)
+36 verbose stack     at endReadableNT (_stream_readable.js:1064:12)
+36 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+36 verbose stack     at process._tickCallback (internal/process/next_tick.js:180:9)
+37 verbose statusCode 403
+38 verbose pkgid react-native-common-intents
+39 verbose cwd /home/wahdat/Documents/react-native-common-intents
+40 error Linux 5.3.0-40-generic
+41 error argv "/usr/bin/node" "/usr/bin/npm" "publish"
+42 error node v8.10.0
+43 error npm  v3.5.2
+44 error code E403
+45 error You cannot publish over the previously published versions: 0.1.0. : react-native-common-intents
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]
