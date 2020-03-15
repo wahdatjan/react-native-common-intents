@@ -5,6 +5,7 @@
 React Native Android Module's Android Common intents actions like for   
 ##### Image picker from Gallery  
 ##### Open date settings  
+##### Open settings page
 ##### Open wifi settings    
 ##### Open Bluetooth settings  
 ##### Open airplanemode settings  
