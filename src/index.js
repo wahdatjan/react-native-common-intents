@@ -15,7 +15,8 @@ const iosOS = {
     openAirplaneModeSettings: noIOS,
     performWebSearch: noIOS,
     dialNumber : noIOS,
-    startTimer : noIOS
+    startTimer : noIOS,
+    createNote : noIOS
 };
 
 const Intents = Platform.OS === 'ios' ? iosOS : {
@@ -51,6 +52,12 @@ const Intents = Platform.OS === 'ios' ? iosOS : {
             throw new Error("Please Enter Text to search");
         }
         CommonIntents.performWebSearch(query);
+    },
+    createNote : (subject,text) => {
+        if(subject == "" || text==""){
+            throw new Error("You need to pass parameters");
+        }
+        CommonIntents.createNote(subject,text);
     }
 
 }

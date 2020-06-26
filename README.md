@@ -14,7 +14,7 @@ React Native Android Module's Android Common intents actions like for
 ##### Create alarm  
 ##### Create timer
 ##### dial phone number    
-
+##### Create note   
 
 ## How this Module is useful ?
 lets say you want to pick image from gallery and want to upload it, you want user to open wifi settings , date settings etc directly from your app , you want to load a web url in browser or you want to make some web search all these things can be achieved with this library as shown below.
@@ -165,6 +165,15 @@ RNIntents.startTimer(String message, int seconds,boolean value)
 ```
 RNIntents.createAlarm(String message, int hour, int minutes);
 ```
+## Example/ Create note
+
+
+### It takes 2 parameters
+#### subject as string , text as string
+```
+RNIntents.createNote(subject,text);
+```
+
 
 ## Example
 

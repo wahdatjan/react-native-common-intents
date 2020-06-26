@@ -146,6 +146,16 @@ public class IntentModule extends ReactContextBaseJavaModule implements Activity
         }
     }
 
+   @ReactMethod
+   public void createNote(String subject, String text) {
+    Intent intent = new Intent(NoteIntents.ACTION_CREATE_NOTE)
+            .putExtra(NoteIntents.EXTRA_NAME, subject)
+            .putExtra(NoteIntents.EXTRA_TEXT, text);
+    if (intent.resolveActivity(getPackageManager()) != null) {
+         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+}
     @ReactMethod
     public void openWifiSettings(){
         Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
